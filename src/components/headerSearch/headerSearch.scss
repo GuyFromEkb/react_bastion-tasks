@@ -1,0 +1,82 @@
+.search {
+	padding: 20px 0;
+	background-color: #fff;
+	&__wrap {
+		display: flex;
+		align-items: center;
+	}
+	&__logo {
+		margin-right: 15px;
+	}
+	&__slogan {
+		width: 112px;
+		font-weight: 400;
+		font-size: 12px;
+		margin-right: 25px;
+	}
+	&__btn {
+		width: 145px;
+		height: 42px;
+		background: #c93e33;
+		border-radius: 4px;
+		border: none;
+		font-weight: 500;
+		font-size: 15px;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+		margin-right: 20px;
+	}
+	&__input {
+		margin-right: 42px;
+		background: url(../../resources/img/iput-lens.png) no-repeat 18px 50%,
+			url(../../resources/img/iput-arrow.png) no-repeat bottom 50% right 18px;
+		padding: 0 48px;
+		width: 546px;
+		height: 42px;
+		border: 1px solid #e6e6e6;
+		border-radius: 4px;
+		&::placeholder {
+			font-weight: 300;
+			font-size: 15px;
+			line-height: 18px;
+			letter-spacing: 0.009em;
+			color: #b3b3b3;
+		}
+	}
+	&__cart {
+		display: flex;
+		gap: 36px;
+	}
+	&__cart-item {
+        position: relative;
+		cursor: pointer;
+		display: flex;
+		gap: 5px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		img {
+			width: 20px;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+	&__cart-counter {
+        position: absolute;
+        right: 13px;
+        bottom: 36px;
+		width: 21px;
+		height: 21px;
+		background: #c93e33;
+		border: 2px solid #ffffff;
+		border-radius: 50%;
+		font-weight: 600;
+		font-size: 12px;
+        text-align: center;
+	
+		color: #efefef;
+	}
+}

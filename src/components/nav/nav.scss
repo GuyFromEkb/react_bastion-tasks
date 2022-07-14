@@ -1,0 +1,36 @@
+.nav {
+	padding: 14px 0;
+	display: flex;
+	justify-content: space-between;
+	&__list {
+		display: flex;
+		gap: 40px;
+		align-items: center;
+	}
+	&__info-wrap {
+		display: flex;
+		gap: 32px;
+	}
+	&__info {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+	&__link {
+		cursor: pointer;
+		font-weight: 300;
+		font-size: 12px;
+	}
+	&__phone {
+		font-weight: 700;
+		font-size: 16px;
+	}
+	&__loc {
+		font-weight: 400;
+		font-size: 12px;
+	}
+	&__mail {
+		font-weight: 300;
+		font-size: 12px;
+	}
+}
