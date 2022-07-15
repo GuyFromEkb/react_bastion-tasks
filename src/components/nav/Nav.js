@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import "./nav.scss"
 
 function Nav() {
@@ -8,8 +10,8 @@ function Nav() {
         <div className="container">
             <div className="nav">
                 <ul className="nav__list">
-                    <li className="nav__link">Типы продуктов</li>
-                    <li className="nav__link">Продукты</li>
+                    <Link to="/type" ><li className="nav__link">Типы продуктов</li></Link>
+                    <Link to="/" > <li className="nav__link">Продукты</li></Link>
                     <li className="nav__link">Выгоды для вас</li>
                     <li className="nav__link">Гарантии</li>
                     <li className="nav__link">Контакты</li>

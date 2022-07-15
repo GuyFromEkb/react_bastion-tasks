@@ -1,0 +1,11 @@
+.note-found {
+	text-align: center;
+	&__back {
+        transition: all .4s;
+		margin-top: 20px;
+		cursor: pointer;
+		&:hover {
+			text-shadow: 1px 2px 3px rgba(137, 137, 137, 1);
+		}
+	}
+}

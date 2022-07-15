@@ -1,0 +1,10 @@
+.type {
+	&__wrap {
+		margin: auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        column-gap: 100px;
+        row-gap: 50px;
+	}
+}
