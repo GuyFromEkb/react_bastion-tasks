@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux"
 import { useRef, useState } from 'react'
 
 import { allType } from "../../../store/type/typeSelectors"
+import {addProduct} from '../../../store/porduct/productActions'
+
+
 import Crumbs from '../../Crumbs/Crumbs'
 import "./product.scss"
 
@@ -11,6 +14,9 @@ function Product() {
     //Получение Типов продукта
     const typeData = useSelector(allType).map(item => item.type)
     const typeDataOption = typeData.map((item, index) => <option key={index} value={item}>{item}</option>)
+
+    //Redux
+    const dispatch = useDispatch()
 
     //Форма
     const {
@@ -53,6 +59,10 @@ function Product() {
 
         // console.log(data);
 
+        
+        dispatch(addProduct(data))      //!!!
+        
+        
         setInputGost([])
         reset();
     }
