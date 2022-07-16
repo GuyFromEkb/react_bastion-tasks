@@ -1,0 +1,10 @@
+.product{
+&__wrap-gost{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // gap: 20px;
+}
+}
+.form-check-label{
+    font-size: 14px;
+}

@@ -11,7 +11,7 @@ function Nav() {
             <div className="nav">
                 <ul className="nav__list">
                     <Link to="/type" ><li className="nav__link">Типы продуктов</li></Link>
-                    <Link to="/" > <li className="nav__link">Продукты</li></Link>
+                    <Link to="/product" > <li className="nav__link">Продукты</li></Link>
                     <li className="nav__link">Выгоды для вас</li>
                     <li className="nav__link">Гарантии</li>
                     <li className="nav__link">Контакты</li>

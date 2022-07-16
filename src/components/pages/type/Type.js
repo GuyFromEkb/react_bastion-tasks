@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react"
-import { useForm } from 'react-hook-form'
 
+import { useForm } from 'react-hook-form'
+import { useSelector, useDispatch } from "react-redux"
+
+import { allType } from "../../../store/type/typeSelectors"
+import { addType } from "../../../store/type/typeActions"
+
+import Crumbs from '../../Crumbs/Crumbs'
 import "./type.scss"
 
 function Type() {
 
-    const [data, setData] = useState([])
+    const typeData = useSelector(allType)
+    const dispatch = useDispatch()
 
-    useEffect(() => {
-        const dataObj = [{ type: "металлоконструкция", id: "s2311a" }, { type: "лестницы", id: "ssF2a1a" }, { type: "ЖБИ", id: "ykLsad02" }]
-        setData(prevData => [...dataObj, ...prevData])
-    }, [])
+
 
     const {
         register,
@@ -23,7 +26,8 @@ function Type() {
 
     const onSubmit = (data) => {
 
-        setData(prevData => [data, ...prevData])
+
+        dispatch(addType(data))
 
         reset();
     }
@@ -31,8 +35,8 @@ function Type() {
 
     const Form = () => {
         return (
-            <div className="card mt-4  col-5">
 
+            <div className="card mt-4  col-5">
                 <div className="alert alert-secondary" role="alert">
                     Форма для добавления типов продуктов
                 </div>
@@ -73,7 +77,7 @@ function Type() {
 
                         <button
                             type="submit"
-                            className="btn btn-primary"
+                            className="btn  type__btn"
                         >Добавить
                         </button>
                     </form>
@@ -85,7 +89,7 @@ function Type() {
 
     const Items = () => {
 
-        return data.map(({ id, type }) => {
+        return typeData.map(({ id, type }) => {
             return (
                 <div key={id} className="card col-12" >
                     <div className="card-header ">Тип: {type} </div>
@@ -99,12 +103,16 @@ function Type() {
 
     return (
         <div className="container">
-            <h2>Тип продуктов</h2>
+            <Crumbs page={'type'} />
+            <button onClick={() => dispatch(addType({ type: "металлоконструкция", id: "s2311a" }))} > test</button>
+            <h3 className="title">Тип продуктов</h3>
+            <div className="type__bg">
+                <Form />
 
-            <Form />
+                <div className="type__wrap mt-5">
+                    <Items />
+                </div>
 
-            <div className="type__wrap mt-5">
-                <Items />
             </div>
 
 
@@ -113,5 +121,5 @@ function Type() {
 
 }
 
-
+// export { Form }
 export default Type

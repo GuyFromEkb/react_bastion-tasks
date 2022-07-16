@@ -74,11 +74,11 @@ textarea,
 select {
 	font: inherit;
 }
-button{
+button {
 	cursor: pointer;
 }
-main{
-	padding: 20px 0 40px 0;
+main {
+	padding: 17px 0 40px 0;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
@@ -94,4 +94,13 @@ main{
 .container {
 	width: 1110px;
 	margin: auto;
+}
+
+.title {
+	margin: 15px 0 31px 0;
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 36px;
+	letter-spacing: 1px;
+	color: #000000;
 }
