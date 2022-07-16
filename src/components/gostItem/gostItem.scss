@@ -1,0 +1,16 @@
+.gost {
+	&__item {
+		cursor: pointer;
+		padding: 5px 10px;
+		background: #f9f9f9;
+		border-radius: 4px;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+		color: #000000;
+	}
+	&__item.on-active {
+		color: #ffffff;
+		background: #c93e33;
+	}
+}

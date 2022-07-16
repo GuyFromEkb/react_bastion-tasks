@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux"
 import { useRef, useState } from 'react'
 
 import { allType } from "../../../store/type/typeSelectors"
-import {addProduct} from '../../../store/porduct/productActions'
+import { addProduct } from '../../../store/porduct/productActions'
+import { addGost } from '../../../store/gost/gostActions'
 
 
 import Crumbs from '../../Crumbs/Crumbs'
@@ -57,12 +58,11 @@ function Product() {
         data.name.toLowerCase().includes("а") ? (data.action = true) : (data.action = false)
         data.gost = inputGost.length !== 0 ? inputGost.toString().split(',') : null
 
-        // console.log(data);
 
-        
-        dispatch(addProduct(data))      //!!!
-        
-        
+
+        dispatch(addProduct(data)) 
+        dispatch(addGost(data.gost))    
+
         setInputGost([])
         reset();
     }

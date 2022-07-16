@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import './App.scss';
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 import Prime from '../pages/prime/Prime';
 import Product from '../pages/product/Product';
 import Type from '../pages/type/Type';
@@ -23,7 +24,7 @@ function App() {
         </Routes>
 
       </main>
-
+<Footer/>
     </>
   );
 }

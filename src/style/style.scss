@@ -39,6 +39,7 @@ body {
 	line-height: 1.5;
 	font-family: "Fira Sans", sans-serif;
 	background: #f2f2f2;
+	position: relative;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -78,6 +79,7 @@ button {
 	cursor: pointer;
 }
 main {
+	min-height: calc(100vh - 430px);
 	padding: 17px 0 40px 0;
 }
 
