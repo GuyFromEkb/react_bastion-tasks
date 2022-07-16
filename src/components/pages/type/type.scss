@@ -7,11 +7,6 @@
 		column-gap: 100px;
 		row-gap: 50px;
 	}
-	&__bg {
-		background: #ffffff;
-		padding: 1px 50px 20px 50px;
-		border: 1px solid #e6e6e6;
-	}
 	&__btn {
 		background: #c93e33;
 		color: #ffffff;
@@ -26,6 +21,11 @@
 		}
 		&:active {
 			transform: scale(1.01);
+		}
+		&:disabled {
+			background: #c93e33;
+			border-color: #c93e33;
+			color: #fff;
 		}
 	}
 }

@@ -17,18 +17,13 @@ function Type() {
 
     const {
         register,
-        formState: {
-            errors,
-        },
+        formState: { errors, isValid },
         handleSubmit,
         reset,
     } = useForm({ mode: 'onBlur' })
 
     const onSubmit = (data) => {
-
-
         dispatch(addType(data))
-
         reset();
     }
 
@@ -76,6 +71,7 @@ function Type() {
 
 
                         <button
+                            disabled={!isValid}
                             type="submit"
                             className="btn  type__btn"
                         >Добавить
@@ -106,7 +102,7 @@ function Type() {
             <Crumbs page={'type'} />
             <button onClick={() => dispatch(addType({ type: "металлоконструкция", id: "s2311a" }))} > test</button>
             <h3 className="title">Тип продуктов</h3>
-            <div className="type__bg">
+            <div className="page-task__bg">
                 <Form />
 
                 <div className="type__wrap mt-5">
