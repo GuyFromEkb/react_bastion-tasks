@@ -5,6 +5,8 @@ const gostReducer = (state = initialValue, action) => {
     switch (action.type) {
 
         case "ADD_GOST": {
+            if (!action.gost) { return state }
+
             const buff = new Set([...state, ...action.gost])
             return [...buff]
         }

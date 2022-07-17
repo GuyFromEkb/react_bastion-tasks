@@ -77,6 +77,10 @@ select {
 }
 button {
 	cursor: pointer;
+	border: none;
+	&:active{
+		transform: scale(1.01);
+	}
 }
 main {
 	min-height: calc(100vh - 430px);

@@ -64,7 +64,6 @@
 }
 .prime {
 	&__wrap {
-		height: 500px;
 		display: grid;
 		grid-template-columns: 270px 1fr;
 		background: #ffffff;
@@ -74,4 +73,3 @@
 		background-color: gray;
 	}
 }
-

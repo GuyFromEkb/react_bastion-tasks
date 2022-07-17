@@ -1,6 +1,7 @@
 import "./Prime.scss"
 import Crumbs from '../../Crumbs/Crumbs'
 import GostList from "../../gostList/GostList"
+import ItemList from "../../itemList/ItemList"
 
 function Prime() {
 
@@ -16,6 +17,7 @@ function Prime() {
                 <div className="prime__left"></div>
                 <div className="prime__right">
                     <GostList />
+                    <ItemList />
                 </div>
             </div>
 
@@ -69,3 +71,5 @@ const Top = () => {
 }
 
 export default Prime
+
+

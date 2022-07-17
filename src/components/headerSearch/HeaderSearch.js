@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux"
+import { allCartItem } from "../../store/cart/cartSelector"
+
 import "./headerSearch.scss"
 import logo from '../../resources/img/logo.png'
 import star from '../../resources/img/star.png'
@@ -5,7 +8,8 @@ import cart from '../../resources/img/cart.png'
 
 function HeaderSearch() {
 
-    const num = 4;
+
+    const cartDataCount = useSelector(allCartItem).length
 
     return (
         <div className="search">
@@ -35,7 +39,7 @@ function HeaderSearch() {
                         </div>
 
                         <div className="search__cart-item">
-                            {num > 0 ? <div className="search__cart-counter">{num}</div> : null}
+                            {cartDataCount > 0 ? <div className="search__cart-counter">{cartDataCount}</div> : null}
                             
                             <img src={cart} alt="cart" />
                             <p>Корзина</p>
