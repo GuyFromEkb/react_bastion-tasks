@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { /* allProduct, */ viewProduct } from '../../store/porduct/productSelector'
-import { allgostFilter } from '../../store/gostFilter/gostFilterSelector'
+import { allgostFilter, priceFilter } from '../../store/Filter/FilterSelector'
 
 import './itemList.scss'
 import Item from '../item/Item'
@@ -11,11 +11,13 @@ import Item from '../item/Item'
 const ItemList = () => {
 
 
-    // const itemData = useSelector(allProduct)
 
     const activeFilterData = useSelector(allgostFilter)
+    const priceFilterData = useSelector(priceFilter)
 
-    const itemData = useSelector((state) => viewProduct(state, activeFilterData))
+
+    const itemData = useSelector((state) => viewProduct(state, { gost: activeFilterData, minMax: priceFilterData }))
+
 
 
     return (

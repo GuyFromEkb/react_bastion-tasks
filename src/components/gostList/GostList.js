@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { allGost } from '../../store/gost/gostSelector'
-import { allgostFilter } from '../../store/gostFilter/gostFilterSelector'
-import { addgostFilter } from '../../store/gostFilter/gostFilterActions'
+import { allgostFilter } from '../../store/Filter/FilterSelector'
+import { addgostFilter } from  '../../store/Filter/FilterActions'
 
 
 import './gostList.scss'
@@ -11,6 +11,8 @@ const GostList = () => {
 
     const gostData = useSelector(allGost)
     const gostFilterData = useSelector(allgostFilter)
+
+    // console.log(gostData,gostFilterData);
     const dispatch = useDispatch()
 
 
