@@ -2,6 +2,9 @@ import "./Prime.scss"
 import Crumbs from '../../Crumbs/Crumbs'
 import GostList from "../../gostList/GostList"
 import ItemList from "../../itemList/ItemList"
+import SideBarTitle from "../../sideBarTitle/SideBarTitle"
+import Category from "../../category/Category"
+import FilterPrice from "../../filterPrice/FilterPrice"
 
 function Prime() {
 
@@ -14,7 +17,15 @@ function Prime() {
             <Crumbs />
             <Top />
             <div className="prime__wrap">
-                <div className="prime__left"></div>
+                <div className="prime__left">
+                    <SideBarTitle name={'Категории'} icon={'category'}>
+                        <Category />
+                    </SideBarTitle>
+                    <SideBarTitle name={'Фильтры'} icon={'filter'}>
+                        <FilterPrice />
+                    </SideBarTitle>
+
+                </div>
                 <div className="prime__right">
                     <GostList />
                     <ItemList />

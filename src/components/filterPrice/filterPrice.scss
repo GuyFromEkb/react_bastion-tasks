@@ -1,0 +1,83 @@
+.price-input {
+	display: flex;
+	justify-content: space-between;
+	&__wrap {
+		position: relative;
+	}
+	&__label {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 15px;
+		font-weight: 400;
+		font-size: 12px;
+	}
+	&__input {
+        font-size: 15px;
+		padding: 0 15px 0 31px;
+		background: #ffffff;
+		width: 108px;
+		height: 35px;
+		border: 1px solid #e6e6e6;
+		border-radius: 2px;
+		&::placeholder {
+			font-weight: 400;
+			font-size: 15px;
+
+			color: #b3b3b3;
+		}
+	}
+}
+.filter-price {
+	padding: 20px;
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+	&__dots {
+		padding: 0 30px;
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+	}
+	&__dot {
+		width: 1px;
+		height: 5px;
+		background: #e6e6e6;
+	}
+	&__dot.lng {
+		height: 7px;
+	}
+}
+.custom-slider {
+	margin-top: 30px;
+	.rc-slider-rail {
+		height: 3px;
+		border-radius: 0;
+	}
+	.rc-slider-handle {
+		position: absolute;
+		width: 13px;
+		height: 13px;
+		margin-top: -5px;
+		background-color: #c93e33;
+		border: none;
+		border-radius: 50%;
+		cursor: pointer;
+		cursor: grab;
+		opacity: 1;
+		touch-action: pan-x;
+	}
+	.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+		border-color: none;
+		box-shadow: none;
+	}
+	.rc-slider-track {
+		position: absolute;
+		height: 3px;
+		background-color: #c93e33;
+		border-radius: none;
+	}
+}

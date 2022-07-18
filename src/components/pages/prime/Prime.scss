@@ -62,6 +62,7 @@
 		padding-right: 6.5px;
 	}
 }
+
 .prime {
 	&__wrap {
 		display: grid;
@@ -70,6 +71,8 @@
 		border: 1px solid #e6e6e6;
 	}
 	&__left {
-		background-color: gray;
+		border-right: 1px solid #e6e6e6;
+		// padding: 0 20px;
+		// background-color: gray;
 	}
 }

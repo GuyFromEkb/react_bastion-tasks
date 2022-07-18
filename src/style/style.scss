@@ -10,7 +10,7 @@
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
-	padding: 0;
+	// padding: 0;
 }
 
 /* Убираем внешние отступы */
@@ -78,7 +78,7 @@ select {
 button {
 	cursor: pointer;
 	border: none;
-	&:active{
+	&:active {
 		transform: scale(1.01);
 	}
 }
@@ -114,4 +114,9 @@ main {
 	background: #ffffff;
 	padding: 1px 50px 50px 50px;
 	border: 1px solid #e6e6e6;
+}
+.filter-title {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
 }

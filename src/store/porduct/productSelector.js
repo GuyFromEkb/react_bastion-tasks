@@ -8,7 +8,7 @@ const viewProduct = (state, filter = []) => {
 
         const productGost = [...item.gost]
 
-        /* const a =  */
+
         return filter.some(filterItem => productGost.includes(filterItem))
 
         // console.log(`filter = `, filter);
@@ -16,7 +16,7 @@ const viewProduct = (state, filter = []) => {
 
     })
 
-    // return state.product
+
 }
 
 export { allProduct, viewProduct }

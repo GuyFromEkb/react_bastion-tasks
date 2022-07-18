@@ -1,0 +1,28 @@
+.category-item {
+	&__title {
+		font-weight: 400;
+		font-size: 12px;
+		color: #b3b3b3;
+	}
+	&__descr {
+		gap: 5px;
+		line-height: 0.9rem;
+		align-items: center;
+		font-weight: 400;
+		font-size: 12px;
+	}
+	&__counter {
+        margin-left: 5px;
+		padding: 5px 6px 4px 6px;
+		height: 14px;
+		background: #c93e33;
+		border-radius: 50px;
+		line-height: 9px;
+		font-weight: 400;
+		font-size: 9px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: #efefef;
+	}
+}

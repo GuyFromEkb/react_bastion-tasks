@@ -4,7 +4,7 @@ const initialValue = [
         "name": "Опора тавровая хомутовая  ТХ",
         "id": "122sd123sd",
         "type": "металлоконструкция",
-        "price": 1222,
+        "price": 3222,
         "hit": true,
         "action": true,
         "gost": ["ОСТ 36-146-88",'MKR 122']
@@ -13,7 +13,7 @@ const initialValue = [
         "name": " цельная приварная  КП",
         "id": "dsa2Lks1",
         "type": "металлоконструкция",
-        "price": 914,
+        "price": 220,
         "hit": false,
         "action": true,
         "gost": ["НТС 65-06", "ГОСТ 14911-82"]

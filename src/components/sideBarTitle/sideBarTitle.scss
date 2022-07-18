@@ -1,0 +1,17 @@
+.side-bar {
+	position: relative;
+	gap: 12px;
+	padding: 0 20px;
+	font-weight: 500;
+	font-size: 18px;
+	align-items: center;
+	display: flex;
+	height: 59px;
+	border-bottom: 1px solid #e6e6e6;
+	&__arrow {
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
