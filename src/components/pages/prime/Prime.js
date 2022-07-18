@@ -5,6 +5,7 @@ import ItemList from "../../itemList/ItemList"
 import SideBarTitle from "../../sideBarTitle/SideBarTitle"
 import Category from "../../category/Category"
 import FilterPrice from "../../filterPrice/FilterPrice"
+import FilterType from "../../filterType/FilterType"
 
 function Prime() {
 
@@ -18,11 +19,12 @@ function Prime() {
             <Top />
             <div className="prime__wrap">
                 <div className="prime__left">
-                    <SideBarTitle name={'Категории'} icon={'category'}>
+                    <SideBarTitle name={'Категории'} icon={'category'} isShow={true} >
                         <Category />
                     </SideBarTitle>
                     <SideBarTitle name={'Фильтры'} icon={'filter'}>
                         <FilterPrice />
+                        <FilterType/>
                     </SideBarTitle>
 
                 </div>

@@ -6,6 +6,7 @@ import { addPriceFilter } from '../../store/Filter/FilterActions';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
+import FilterAccordion from '../filterAccordion/FilterAccordion';
 import './filterPrice.scss'
 
 const FilterPrice = () => {
@@ -128,14 +129,6 @@ const FilterPrice = () => {
 
 
 
-    const title =
-        <div className="filter-price__title">
-            <div className="filter-title">Цена, руб.</div>
-            <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.5 1.25L4 4.75L7.5 1.25" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        </div>
-
     const dots =
         <ul className="filter-price__dots">
             <li className="filter-price__dot"></li>
@@ -149,36 +142,55 @@ const FilterPrice = () => {
 
 
     return (
-        <div className="filter-price">
+        <FilterAccordion title={'Цена, руб.'} show={true} >
 
-            {title}
+            <div className="filter-price">
 
-            <div className="price-input">
-                <div className="price-input__wrap">
-                    <label className='price-input__label' htmlFor="beforePrice">от</label>
-                    <input type='number' value={flagMinPrice ? "" : buffMinInput === undefined ? minPrice : buffMinInput} onChange={onChangeMinInput} onBlur={(e) => onSetInputWithValidation(e, 'minInput')} className='price-input__input' placeholder={minPrice} id='beforePrice' />
+                <div className="price-input">
+                    <div className="price-input__wrap">
+                        <label className='price-input__label' htmlFor="beforePrice">от</label>
+                        <input
+                            id='beforePrice'
+                            type='number'
+                            className='price-input__input'
+                            placeholder={minPrice}
+                            value={flagMinPrice ? "" : buffMinInput === undefined ? minPrice : buffMinInput}
+                            onChange={onChangeMinInput}
+                            onBlur={(e) => onSetInputWithValidation(e, 'minInput')}
+                        />
+                    </div>
+                    <div className="price-input__wrap">
+                        <label className='price-input__label' htmlFor="afterPrice">до</label>
+                        <input
+                            id='afterPrice'
+                            type='number'
+                            className='price-input__input'
+                            placeholder={MaxPrice}
+                            value={flagMaxPrice ? "" : buffMaxInput === undefined ? MaxPrice : buffMaxInput}
+                            onChange={onChangeMaxInput}
+                            onBlur={(e) => onSetInputWithValidation(e, 'maxInput')}
+                        />
+                    </div>
                 </div>
-                <div className="price-input__wrap">
-                    <label className='price-input__label' htmlFor="afterPrice">до</label>
-                    <input type='number' value={flagMaxPrice ? "" : buffMaxInput === undefined ? MaxPrice : buffMaxInput} onChange={onChangeMaxInput} onBlur={(e) => onSetInputWithValidation(e, 'maxInput')} className='price-input__input' placeholder={MaxPrice} id='afterPrice' />
+
+                {valid && <p className='price-input__validation' >{valid}</p>}
+
+                <div className="price-input__wrap-slider">
+                    <Slider className='custom-slider'
+                        onAfterChange={() => { setSliderSubmitData(state => !state) }}
+                        onChange={useSlider}
+                        range={true}
+                        min={min}
+                        max={max}
+                        value={[minPrice, MaxPrice]}
+                    />
                 </div>
 
+
+                {dots}
             </div>
-            {valid && <p className='price-input__validation' >{valid}</p>}
+        </FilterAccordion>
 
-            <Slider className='custom-slider'
-                onAfterChange={() => { setSliderSubmitData(state => !state) }}
-                onChange={useSlider}
-                range={true}
-                min={min}
-                max={max}
-
-                value={[minPrice, MaxPrice]}
-            />
-
-            {dots}
-
-        </div>
 
     )
 }

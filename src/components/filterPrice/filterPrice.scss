@@ -13,7 +13,7 @@
 		font-size: 12px;
 	}
 	&__input {
-        font-size: 15px;
+		font-size: 15px;
 		padding: 0 15px 0 31px;
 		background: #ffffff;
 		width: 108px;
@@ -27,25 +27,23 @@
 			color: #b3b3b3;
 		}
 	}
-	&__validation{
+	&__validation {
 		margin-top: 5px;
 		text-align: center;
 		font-size: 10px;
 	}
+	&__wrap-slider{
+		margin-top: 30px;
+		padding: 0 7px;
+	}
 }
 .filter-price {
-	padding: 20px;
-	&__title {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 20px;
-	}
 	&__dots {
 		padding: 0 30px;
 		display: flex;
 		justify-content: space-between;
 		gap: 10px;
+		padding-bottom: 20px;
 	}
 	&__dot {
 		width: 1px;
@@ -57,23 +55,19 @@
 	}
 }
 .custom-slider {
-	margin-top: 30px;
+
 	.rc-slider-rail {
+		margin-left: -6px;
+		width: calc(100% + 12px);
 		height: 3px;
 		border-radius: 0;
 	}
 	.rc-slider-handle {
-		position: absolute;
 		width: 13px;
 		height: 13px;
-		margin-top: -5px;
 		background-color: #c93e33;
 		border: none;
-		border-radius: 50%;
-		cursor: pointer;
-		cursor: grab;
 		opacity: 1;
-		touch-action: pan-x;
 	}
 	.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
 		border-color: none;
