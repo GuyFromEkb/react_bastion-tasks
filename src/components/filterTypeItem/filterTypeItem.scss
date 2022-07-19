@@ -1,0 +1,42 @@
+.filter-type__item {
+	display: inline-flex;
+	align-items: center;
+}
+.checkbox {
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0);
+		width: 10px;
+		height: 10px;
+		background-color: #c93e33;
+		border-radius: 1px;
+		transition: 0.3s;
+	}
+}
+.checkbox__input {
+	display: none;
+	&:checked + label .checkbox {
+		&:after {
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+}
+.checkbox__label {
+	font-size: 15px;
+	line-height: 18px;
+	color: #000000;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}

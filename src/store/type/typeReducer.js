@@ -1,5 +1,5 @@
 
-const initialValue = [{ type: "металлоконструкция", id: "s2311a" }, { type: "лестницы", id: "ssF2a1a" }, { type: "ЖБИ", id: "ykLsad02" }]
+const initialValue = [{ type: "металлоконструкция", id: "metal" }, { type: "лестницы", id: "lestnica" }, { type: "ЖБИ", id: "jbi" }]
 
 
 const typeReducer = (state = initialValue, action) => {

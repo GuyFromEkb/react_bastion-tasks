@@ -1,6 +1,7 @@
 const initialValue = {
     gost: [],
-    price: []
+    price: [],
+    typeFilter: []
 
 }
 
@@ -23,6 +24,17 @@ const FilterReducer = (state = initialValue, action) => {
         case "ADD_PRICE_FILTER": {
 
             return { ...state, price: action.minMax }
+        }
+        case "TOGGLE_TYPE_FILTER": {
+
+            if (state.typeFilter.includes(action.typeFilter)) {
+                const buffFilterArr = state.typeFilter.filter(item => item !== action.typeFilter)
+                return { ...state, typeFilter: buffFilterArr }
+            }
+
+            const buffFilterArr = [...state.typeFilter, action.typeFilter]
+
+            return { ...state, typeFilter: buffFilterArr }
         }
 
         default: {

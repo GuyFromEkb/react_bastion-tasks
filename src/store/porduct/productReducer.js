@@ -3,16 +3,16 @@ const initialValue = [
     {
         "name": "Опора тавровая хомутовая  ТХ",
         "id": "122sd123sd",
-        "type": "металлоконструкция",
+        "type": "metal",
         "price": 3222,
         "hit": true,
         "action": true,
-        "gost": ["ОСТ 36-146-88",'MKR 122']
+        "gost": ["ОСТ 36-146-88", 'MKR 122']
     },
     {
         "name": " цельная приварная  КП",
         "id": "dsa2Lks1",
-        "type": "металлоконструкция",
+        "type": "lestnica",
         "price": 220,
         "hit": false,
         "action": true,
@@ -21,7 +21,7 @@ const initialValue = [
     {
         "name": "Шлюз ВНПП3",
         "id": "msjL29sa",
-        "type": "лестницы",
+        "type": "jbi",
         "price": 1308,
         "hit": false,
         "action": false,

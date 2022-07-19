@@ -11,11 +11,18 @@ import Crumbs from '../../Crumbs/Crumbs'
 import "./product.scss"
 
 
+// //Получение Типов продукта
+// const typeData = useSelector(allType).map(item => item.type)
+// const typeDataOption = typeData.map((item, index) => <option key={index} value={item}>{item}</option>)
+
+
 function Product() {
     //Получение Типов продукта
-    const typeData = useSelector(allType).map(item => item.type)
-    const typeDataOption = typeData.map((item, index) => <option key={index} value={item}>{item}</option>)
+    const typeData = useSelector(allType)
+    const typeDataOption = typeData.map(({ type, id }) => <option key={id} value={id}>{type}</option>)
 
+
+    //
     //Redux
     const dispatch = useDispatch()
 
@@ -60,8 +67,8 @@ function Product() {
 
 
 
-        dispatch(addProduct(data)) 
-        dispatch(addGost(data.gost))    
+        dispatch(addProduct(data))
+        dispatch(addGost(data.gost))
 
         setInputGost([])
         reset();

@@ -5,7 +5,8 @@ import ItemList from "../../itemList/ItemList"
 import SideBarTitle from "../../sideBarTitle/SideBarTitle"
 import Category from "../../category/Category"
 import FilterPrice from "../../filterPrice/FilterPrice"
-import FilterType from "../../filterType/FilterType"
+import FilterTypeList from "../../filterTypeList/FilterTypeList"
+// import FilterTypeList from "../../filterTypeList/FilterTypeList"
 
 function Prime() {
 
@@ -24,7 +25,7 @@ function Prime() {
                     </SideBarTitle>
                     <SideBarTitle name={'Фильтры'} icon={'filter'}>
                         <FilterPrice />
-                        <FilterType/>
+                        <FilterTypeList/>
                     </SideBarTitle>
 
                 </div>
