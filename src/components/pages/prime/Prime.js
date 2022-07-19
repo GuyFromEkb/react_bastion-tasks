@@ -6,7 +6,8 @@ import SideBarTitle from "../../sideBarTitle/SideBarTitle"
 import Category from "../../category/Category"
 import FilterPrice from "../../filterPrice/FilterPrice"
 import FilterTypeList from "../../filterTypeList/FilterTypeList"
-// import FilterTypeList from "../../filterTypeList/FilterTypeList"
+import FilterAccordion from "../../filterAccordion/FilterAccordion"
+import FilterBtns from "../../filterBtns/FilterBtns"
 
 function Prime() {
 
@@ -25,7 +26,17 @@ function Prime() {
                     </SideBarTitle>
                     <SideBarTitle name={'Фильтры'} icon={'filter'}>
                         <FilterPrice />
-                        <FilterTypeList/>
+                        <FilterTypeList />
+                        <FilterAccordion title={'Бренд'} show={false} icon={true} >
+                            <p className="mb-3 lorem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod maxime recusandae adipisci ipsum qui corporis.</p>
+                        </FilterAccordion>
+                        <FilterBtns />
+
+
+
+
+
+
                     </SideBarTitle>
 
                 </div>

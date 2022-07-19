@@ -1,7 +1,7 @@
 const initialValue = {
     gost: [],
     price: [],
-    typeFilter: []
+    typeFilter: [],
 
 }
 
@@ -10,6 +10,8 @@ const FilterReducer = (state = initialValue, action) => {
     switch (action.type) {
 
         case "TOGGLE_GOSTFILTER": {
+
+
 
             if (state.gost.includes(action.gost)) {
                 const buffGostArr = state.gost.filter(item => item !== action.gost)
@@ -29,12 +31,17 @@ const FilterReducer = (state = initialValue, action) => {
 
             if (state.typeFilter.includes(action.typeFilter)) {
                 const buffFilterArr = state.typeFilter.filter(item => item !== action.typeFilter)
-                return { ...state, typeFilter: buffFilterArr }
+                return { ...state,typeFilter: buffFilterArr }
             }
 
             const buffFilterArr = [...state.typeFilter, action.typeFilter]
 
             return { ...state, typeFilter: buffFilterArr }
+        }
+
+        case "CLEAR_ALL_FILTER": {
+
+            return { ...initialValue }
         }
 
         default: {

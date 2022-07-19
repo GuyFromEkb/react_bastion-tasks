@@ -10,8 +10,12 @@ const addPriceFilter = (minMax) => ({
 
 const toggleTypeFilter = (typeFilterId) => ({
     type: 'TOGGLE_TYPE_FILTER',
-    typeFilter:typeFilterId
+    typeFilter: typeFilterId
 })
 
+const clearFilter = {
+    type: 'CLEAR_ALL_FILTER',
+}
 
-export { addgostFilter, addPriceFilter, toggleTypeFilter }
+
+export { addgostFilter, addPriceFilter, toggleTypeFilter, clearFilter }

@@ -1,0 +1,29 @@
+.filterBtns {
+	&__wrap {
+		border-top: 1px solid #e6e6e6;
+		padding: 20px;
+	}
+	&__wrap.disabled {
+		opacity: 0.5;
+		border: none;
+	}
+	&__btn {
+		background: #c93e33;
+		width: 100%;
+		height: 47px;
+		border-radius: 4px;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 18px;
+		color: white;
+	}
+	&__btn[disabled] {
+        cursor: default;
+		background: #ffffff;
+		color: #b3b3b3;
+        border: 1px solid #E6E6E6;
+        &:active{
+            transform: none;
+        }
+	}
+}
