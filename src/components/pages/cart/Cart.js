@@ -1,7 +1,12 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { allCartItem } from '../../../store/cart/cartSelector'
 
-import Crumbs from '../../Crumbs/Crumbs'
+
+
+import Crumbs from '../../crumbs/Crumbs'
 import CartList from '../../cartList/CartList'
+import CartForm from '../../cartForm/CartForm'
 
 import './cart.scss'
 
@@ -12,16 +17,30 @@ const Cart = () => {
     const showNotice = (bool) => {
         return setNotice(bool)
     }
+    const showData = useSelector(allCartItem).length === 0
+
 
     return (
         <div className="container">
             <Crumbs page={'cart'} />
             <h3 className="title">Корзина</h3>
             <div className="cart__wraper">
-                <div className="cart__left">
-                    <Notice show={notice} />
-                    <CartList show={showNotice} />
-                </div>
+                {
+                    showData
+                        ?
+                        <div className="cart__empty">В данный момент корзина пуста</div>
+                        :
+                        <>
+                            <div className="cart__left">
+                                <Notice show={notice} />
+                                <CartList show={showNotice} />
+                            </div>
+                            <div className="cart__right">
+                                <OrderTitle />
+                                <CartForm />
+                            </div>
+                        </>
+                }
 
             </div>
         </div>
@@ -55,4 +74,10 @@ const Notice = ({ show }) => {
         </div>
     )
 
+}
+const OrderTitle = () => {
+
+    return (
+        <div className="oreder-title">Заказ</div>
+    )
 }

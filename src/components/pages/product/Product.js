@@ -7,7 +7,7 @@ import { addProduct } from '../../../store/porduct/productActions'
 import { addGost } from '../../../store/gost/gostActions'
 
 
-import Crumbs from '../../Crumbs/Crumbs'
+import Crumbs from '../../crumbs/Crumbs'
 import "./product.scss"
 
 

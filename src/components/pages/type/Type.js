@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { allType } from "../../../store/type/typeSelectors"
 import { addType } from "../../../store/type/typeActions"
 
-import Crumbs from '../../Crumbs/Crumbs'
+import Crumbs from '../../crumbs/Crumbs'
 import "./type.scss"
 
 function Type() {
