@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import { allCartItem } from "../../store/cart/cartSelector"
 
 import "./headerSearch.scss"
@@ -38,12 +39,14 @@ function HeaderSearch() {
                             <p>Избранное</p>
                         </div>
 
-                        <div className="search__cart-item">
-                            {cartDataCount > 0 ? <div className="search__cart-counter">{cartDataCount}</div> : null}
-                            
-                            <img src={cart} alt="cart" />
-                            <p>Корзина</p>
-                        </div>
+                        <Link to={"/cart"} >
+                            <div className="search__cart-item link">
+                                {cartDataCount > 0 ? <div className="search__cart-counter">{cartDataCount}</div> : null}
+
+                                <img src={cart} alt="cart" />
+                                <p>Корзина</p>
+                            </div>
+                        </Link>
 
                     </div>
 

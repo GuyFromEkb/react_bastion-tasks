@@ -1,0 +1,19 @@
+.cart-list {
+	&__clear {
+		display: flex;
+		align-items: center;
+		gap: 13px;
+		background: none;
+		margin-right: 30px;
+		padding: 31px 0 35px 0;
+		float: right;
+		svg{
+			padding-bottom: 1px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 18px;
+			color: #c93e33;
+		}
+	}
+}

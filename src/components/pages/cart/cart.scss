@@ -1,0 +1,28 @@
+.cart {
+	&__wraper {
+		// min-height: 800px;
+		background: #ffffff;
+		border: 1px solid #e6e6e6;
+		display: grid;
+		grid-template-columns: 830px 1fr;
+	}
+	&__left {
+		border-right: 1px solid #e6e6e6;
+	}
+}
+.notice {
+	height: 59px;
+	padding: 0 20px;
+	border-bottom: 1px solid #e6e6e6;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+    &__icon{
+        margin-bottom: 4px;
+    }
+	&__descr {
+		font-size: 12px;
+		line-height: 14px;
+		color: #b3b3b3;
+	}
+}

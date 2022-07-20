@@ -18,7 +18,7 @@ const FilterTypeList = () => {
         dispatch(toggleTypeFilter(e.target.id))
     }
     return (
-        <FilterAccordion title={'Тип продукта'} show={true} icon={true} >
+        <FilterAccordion title={'Тип продукта'} show={false} icon={true} >
 
             <ul className='filter-type__list' >
                 {typeData.map(item => {

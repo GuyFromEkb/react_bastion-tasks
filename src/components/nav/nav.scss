@@ -21,6 +21,11 @@
 		font-weight: 300;
 		font-size: 12px;
 	}
+	&__link.link {
+		&:hover {
+			color: #c93e33;
+		}
+	}
 	&__phone {
 		font-weight: 700;
 		font-size: 16px;
