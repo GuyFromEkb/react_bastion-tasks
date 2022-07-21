@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { allType } from "../../../store/type/typeSelectors"
 import { addType } from "../../../store/type/typeActions"
 
-import Crumbs from '../../crumbs123/Crumbs'
+import Crumbs from '../../crumbs/Crumbs'
 import "./type.scss"
 
 function Type() {

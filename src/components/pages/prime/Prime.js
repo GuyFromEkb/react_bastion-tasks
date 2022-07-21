@@ -1,5 +1,5 @@
 import "./Prime.scss"
-import Crumbs from '../../crumbs123/Crumbs'
+import Crumbs from '../../crumbs/Crumbs'
 import PrimeTop from "../../prime-top/PrimeTop"
 import PrimeLeft from "../../prime-left/PrimeLeft"
 import PrimeRight from "../../prime-right/PrimeRight"
