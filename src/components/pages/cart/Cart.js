@@ -4,7 +4,7 @@ import { allCartItem } from '../../../store/cart/cartSelector'
 
 
 
-import Crumbs from '../../crumbs123/Crumbs'
+import Crumbs from '../../crumbs/Crumbs'
 import CartList from '../../cartList/CartList'
 import CartForm from '../../cartForm/CartForm'
 
