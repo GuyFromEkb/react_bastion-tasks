@@ -1,5 +1,4 @@
 .item {
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -19,7 +18,8 @@
 		box-shadow: 0px 12px 12px 4px rgba(0, 0, 0, 0.1);
 		height: 555px;
 		.item__counter,
-		.item__btns {
+		.item__btns,
+		.item__favorit {
 			opacity: 1;
 			visibility: visible;
 		}
@@ -28,9 +28,23 @@
 		border-right: none;
 	}
 	&__actions {
+		position: relative;
 		display: flex;
+		align-items: center;
 		gap: 5px;
 		min-height: 21px;
+	}
+
+	&__favorit {
+		position: absolute;
+		right: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		font-size: 12px;
+		color: #b3b3b3;
+		opacity: 0;
+		visibility: hidden;
 	}
 	&__hit,
 	&__action {

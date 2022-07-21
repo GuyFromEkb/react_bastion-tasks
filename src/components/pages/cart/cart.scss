@@ -6,6 +6,7 @@
 		grid-template-columns: 830px 1fr;
 	}
 	&__left {
+		position: relative;
 		border-right: 1px solid #e6e6e6;
 	}
 	&__empty{

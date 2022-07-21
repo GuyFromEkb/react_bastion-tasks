@@ -128,20 +128,20 @@ const CartForm = () => {
         }
     }
     const showConsolOrderInfo = (formDataObj, cartInfo, finalPrice) => {
-        console.log("Имя:", formDataObj.name);
-        console.log("телефон:", formDataObj.phone);
-        console.log("email:", formDataObj.mail);
-        console.log("Организация/ИНН:", formDataObj.inn);
-        console.log("Cумма заказа:", finalPrice);
-        console.log('==================================');
-        console.log(`Заказ ${cartInfo.length} позиции:`);
-        console.log('==================================');
+        console.log("Имя:", formDataObj.name)
+        console.log("телефон:", formDataObj.phone)
+        console.log("email:", formDataObj.mail)
+        console.log("Организация/ИНН:", formDataObj.inn)
+        console.log("Cумма заказа:", Math.round(finalPrice * 10) / 10, "р.")
+        console.log('==================================')
+        console.log(`Заказ ${cartInfo.length} позиции:`)
+        console.log('==================================')
         cartInfo.forEach((item, index) => {
 
             console.log("Позиция ", index + 1, ":")
             console.log("Id: ", item.id)
             console.log("Название: ", item.name)
-            console.log("Количество: ", item.count, "по цене:", item.price, "за шт.")
+            console.log("Количество: ", item.count, "по цене:", item.price, "р.", "за шт.")
             console.log('----------------------------------')
         })
     }

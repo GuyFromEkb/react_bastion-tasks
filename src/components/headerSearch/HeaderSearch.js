@@ -18,7 +18,7 @@ function HeaderSearch() {
             <div className="container">
                 <div className="search__wrap">
 
-                    <img className="search__logo" src={logo} alt="" />
+                    <Link to={"/"}> <img className="search__logo" src={logo} alt="" /></Link>
 
                     <p className="search__slogan">Производитель металлических изделий №1</p>
                     <button className="search__btn">

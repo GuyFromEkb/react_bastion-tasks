@@ -1,4 +1,3 @@
-
 const initialValue = [
     {
         "name": "Опора тавровая хомутовая  ТХ",
@@ -7,7 +6,7 @@ const initialValue = [
         "price": 3222,
         "hit": true,
         "action": true,
-        "gost": ["ОСТ 36-146-88", 'MKR 122']
+        "gost": ["ОСТ 36-146-88"]
     },
     {
         "name": " цельная приварная  КП",
@@ -22,7 +21,7 @@ const initialValue = [
         "name": "Шлюз ВНПП3",
         "id": "msjL29sa",
         "type": "jbi",
-        "price": 1308,
+        "price": 1308.4,
         "hit": false,
         "action": false,
         "gost": ["ОСТ 36-146-88", "НТС 65-06", "MKR 122"]

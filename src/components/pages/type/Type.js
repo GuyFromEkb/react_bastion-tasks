@@ -1,4 +1,7 @@
 
+
+
+
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from "react-redux"
 
@@ -20,7 +23,10 @@ function Type() {
         formState: { errors, isValid },
         handleSubmit,
         reset,
-    } = useForm({ mode: 'onBlur' })
+    } = useForm({
+        mode: 'onBlur',
+        reValidateMode: 'onBlur'
+    })
 
     const onSubmit = (data) => {
         dispatch(addType(data))
@@ -100,7 +106,9 @@ function Type() {
     return (
         <div className="container">
             <Crumbs page={'type'} />
-            <button onClick={() => dispatch(addType({ type: "металлоконструкция", id: "s2311a" }))} > test</button>
+
+            {/* <button onClick={() => dispatch(addType({ type: "металлоконструкция", id: "s2311a" }))} > test</button> */}
+            
             <h3 className="title">Тип продуктов</h3>
             <div className="page-task__bg">
                 <Form />

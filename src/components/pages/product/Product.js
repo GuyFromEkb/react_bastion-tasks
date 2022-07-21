@@ -1,30 +1,30 @@
-import { useForm } from 'react-hook-form'
-import { useSelector, useDispatch } from "react-redux"
-import { useRef, useState } from 'react'
+import { useForm } from "react-hook-form";
+import { useSelector, useDispatch } from "react-redux";
+import { useRef, useState } from "react";
 
-import { allType } from "../../../store/type/typeSelectors"
-import { addProduct } from '../../../store/porduct/productActions'
-import { addGost } from '../../../store/gost/gostActions'
+import { allType } from "../../../store/type/typeSelectors";
+import { addProduct } from "../../../store/porduct/productActions";
+import { addGost } from "../../../store/gost/gostActions";
 
-
-import Crumbs from '../../crumbs/Crumbs'
-import "./product.scss"
-
+import Crumbs from "../../crumbs/Crumbs";
+import "./product.scss";
 
 // //Получение Типов продукта
 // const typeData = useSelector(allType).map(item => item.type)
 // const typeDataOption = typeData.map((item, index) => <option key={index} value={item}>{item}</option>)
 
-
 function Product() {
     //Получение Типов продукта
-    const typeData = useSelector(allType)
-    const typeDataOption = typeData.map(({ type, id }) => <option key={id} value={id}>{type}</option>)
-
+    const typeData = useSelector(allType);
+    const typeDataOption = typeData.map(({ type, id }) => (
+        <option key={id} value={id}>
+            {type}
+        </option>
+    ));
 
     //
     //Redux
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     //Форма
     const {
@@ -32,47 +32,61 @@ function Product() {
         formState: { errors, isValid },
         handleSubmit,
         reset,
-    } = useForm({ mode: 'onBlur' })
+    } = useForm({
+        mode: "onBlur",
+        reValidateMode: "onBlur"
+    });
 
     //Гост
     const refGost = useRef();
-    const [inputGost, setInputGost] = useState([])
-    const [inputGostError, setinputGostError] = useState(null)
-    const onAddGost = () => {
+    const [inputGost, setInputGost] = useState([]);
+    const [inputGostError, setinputGostError] = useState(null);
 
-        const flag = refGost.current.value.length < 3 ?
-            "Гост не может быть короче 3ех символов " : refGost.current.value.search(/[!@#$%^&*]/) > -1 ? "Гост не может содержать спец-символлы" : null
+    const onAddGost = () => {
+        const flag =
+            refGost.current.value.length < 3
+                ? "Гост не может быть короче 3ех символов "
+                : refGost.current.value.search(/[!@#$%^&*]/) > -1
+                    ? "Гост не может содержать спец-символлы"
+                    : null;
 
         if (!flag) {
-            setinputGostError(flag)
-            setInputGost(input => {
-                const buff = [...input, refGost.current.value]
-                refGost.current.value = ""
-                return buff
-            })
-            return
+            setinputGostError(flag);
+            setInputGost((input) => {
+                const buff = [...input, refGost.current.value];
+                refGost.current.value = "";
+                return buff;
+            });
+            return;
         }
 
-        setinputGostError(flag)
-        refGost.current.focus()
-
+        setinputGostError(flag);
+        refGost.current.focus();
+    }
+    const onAddGostPushKey = (e) => {
+        if (e.key === 'Enter') {
+            onAddGost()
+        }
     }
 
     //сабмит
     const onSubmit = (data) => {
 
-        data.name.toLowerCase().includes("о") ? (data.hit = true) : (data.hit = false)
-        data.name.toLowerCase().includes("а") ? (data.action = true) : (data.action = false)
-        data.gost = inputGost.length !== 0 ? inputGost.toString().split(',') : null
+        data.name.toLowerCase().includes("о")
+            ? (data.hit = true)
+            : (data.hit = false);
+        data.name.toLowerCase().includes("а")
+            ? (data.action = true)
+            : (data.action = false);
+            
+        data.gost = inputGost.length !== 0 ? inputGost.toString().split(",") : [];
 
+        dispatch(addProduct(data));
+        dispatch(addGost(data.gost));
 
-
-        dispatch(addProduct(data))
-        dispatch(addGost(data.gost))
-
-        setInputGost([])
+        setInputGost([]);
         reset();
-    }
+    };
 
     const Form = () => {
         return (
@@ -81,79 +95,102 @@ function Product() {
                     Форма для добавления продуктов
                 </div>
                 <div className="card-body">
-
                     <form onSubmit={handleSubmit(onSubmit)}>
-
                         <div className="mb-2">
                             <input
                                 className="form-control"
                                 placeholder="Название продукта"
-                                {...register('name', {
+                                {...register("name", {
                                     required: "Поле обязательно к заполнению",
                                     minLength: {
                                         value: 4,
-                                        message: "Минимум 4 символа"
-                                    }
+                                        message: "Минимум 4 символа",
+                                    },
                                 })}
                             />
-                            <div className="form-text">{errors?.name && <p>{errors.name.message}</p>}</div>
+                            <div className="form-text">
+                                {errors?.name && <p>{errors.name.message}</p>}
+                            </div>
                         </div>
 
                         <div className="mb-2">
                             <input
                                 className="form-control"
                                 placeholder="Id продукта"
-                                {...register('id', {
+                                {...register("id", {
                                     required: "Поле обязательно к заполнению",
                                     minLength: {
                                         value: 3,
-                                        message: "Минимальная длина id 3 символа"
-                                    }
+                                        message: "Минимальная длина id 3 символа",
+                                    },
                                 })}
                             />
-                            <div className="form-text">{errors?.id && <p>{errors.id.message}</p>}</div>
+                            <div className="form-text">
+                                {errors?.id && <p>{errors.id.message}</p>}
+                            </div>
                         </div>
                         <div className="mb-2">
-                            <select className="form-select"
-                                {...register('type', {
+                            <select
+                                className="form-select"
+                                {...register("type", {
                                     required: "Поле обязательно к заполнению",
-                                    validate: type => type !== "Выберите тип продукта"
-
+                                    validate: (type) => type !== "Выберите тип продукта",
                                 })}
                             >
-                                <option >Выберите тип продукта</option>
+                                <option>Выберите тип продукта</option>
                                 {typeDataOption}
                             </select>
-
                         </div>
                         <div className="mb-2">
                             <input
                                 className="form-control"
                                 placeholder="Укажите цену"
                                 type="number"
-                                {...register('price', {
+                                step="0.1"
+                                {...register("price", {
                                     required: "Поле обязательно к заполнению",
                                     min: {
                                         value: 1,
-                                        message: 'Цена не может быть ниже 1'
+                                        message: "Цена не может быть ниже 1",
                                     },
-                                    valueAsNumber: true
+                                    valueAsNumber: true,
                                 })}
                             />
-                            <div className="form-text">{errors?.price && <p>{errors.price.message}</p>}</div>
+                            <div className="form-text">
+                                {errors?.price && <p>{errors.price.message}</p>}
+                            </div>
                         </div>
                         <div className="mb-3">
-                            <input className="form-control mb-2" type="text" value={inputGost.length === 0 ? "Введите ГОСТ,если он присутсвует" : inputGost} disabled readOnly
-
+                            <input
+                                className="form-control mb-2"
+                                type="text"
+                                value={
+                                    inputGost.length === 0
+                                        ? "Введите ГОСТ,если он присутсвует"
+                                        : inputGost
+                                }
+                                disabled
+                                readOnly
                             />
                             <div className="input-group mb-1">
-                                <input ref={refGost} type="text" className="form-control" placeholder="несколько - через запятую"
+                                <input
+                                    onKeyDown={(e) => onAddGostPushKey(e)}
+                                    ref={refGost}
+                                    // value={refGost.current.value}
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="несколько - через запятую"
                                 />
-                                <button onClick={onAddGost} className="btn btn-outline-secondary" type="button" id="button-addon2">Добавить ГОСТ</button>
-
+                                <button
+                                    onClick={onAddGost}
+                                    className="btn btn-outline-secondary"
+                                    type="button"
+                                    id="button-addon2"
+                                >
+                                    Добавить ГОСТ
+                                </button>
                             </div>
                             <div className="form-text">{inputGostError}</div>
-
                         </div>
 
                         {/* value={inputGost.length === 0 ? "Введите ГОСТ,если он присутсвует" : inputGost} */}
@@ -162,25 +199,24 @@ function Product() {
                             disabled={!isValid}
                             type="submit"
                             className="btn  type__btn"
-                        >Добавить
+                        >
+                            Добавить
                         </button>
                     </form>
-
                 </div>
-            </div >
-        )
-    }
+            </div>
+        );
+    };
 
     return (
         <div className="container">
-            <Crumbs page={'product'} />
+            <Crumbs page={"product"} />
             <h3 className="title">Продукты</h3>
             <div className="page-task__bg">
                 <Form />
             </div>
-        </div >
-    )
-
+        </div>
+    );
 }
 
-export default Product
+export default Product;

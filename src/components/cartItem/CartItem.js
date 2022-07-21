@@ -2,22 +2,26 @@ import { useDispatch } from 'react-redux'
 import { removeCartItem, changeCountCartItem } from '../../store/cart/cartActions'
 
 import img from '../../resources/img/item-img.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './cartItem.scss'
-
-
-/* 
-count: 1
-gost: (2) ['ОСТ 36-146-88', 'MKR 122']
-id: "122sd123sd"
-name: "Опора тавровая хомутовая  ТХ"
-price: 3222 
-*/
 
 const CartItem = ({ count, gost, id, name, price, show }) => {
 
     const dispatch = useDispatch()
+
+
+
+    useEffect(() => {
+
+        if (count > 99) {
+            dispatch(changeCountCartItem(id, 99))
+            show(true)
+            setInput(99)
+        }
+            // eslint-disable-next-line
+    }, [])
+
 
     const [input, setInput] = useState(count)
 
@@ -84,7 +88,7 @@ const CartItem = ({ count, gost, id, name, price, show }) => {
                     <div onClick={() => onChangeCount(-1)} className="counter__btn">-</div>
                 </div>
             </div>
-            <div className="cart-item__final-price">{price * input} руб.</div>
+            <div className="cart-item__final-price">{(Math.round((price * input) * 10) / 10)} руб.</div>
 
             <div
                 onClick={onRemoveItem}
