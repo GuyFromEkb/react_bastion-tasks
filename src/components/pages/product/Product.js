@@ -6,7 +6,7 @@ import { allType } from "../../../store/type/typeSelectors";
 import { addProduct } from "../../../store/porduct/productActions";
 import { addGost } from "../../../store/gost/gostActions";
 
-import Crumbs from "../../crumbs/Crumbs";
+import Crumbs from "../../crumbs123/Crumbs";
 import "./product.scss";
 
 // //Получение Типов продукта
