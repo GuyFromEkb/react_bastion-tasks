@@ -1,4 +1,4 @@
-# Тестовое задание по React/Redux/Typescript*
+# Тестовое задание по React/Redux/Router/Typescript*
 
 [URL APP](https://react-bastion-tasks.vercel.app/)  
 
